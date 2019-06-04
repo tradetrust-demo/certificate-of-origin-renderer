@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-import { certificateData } from "@tradetrust/tradetrust-certificate";
+import {
+  certificateData
+} from "@tradetrust/tradetrust-certificate";
 import connectToParent from "penpal/lib/connectToParent";
 // import styles from "../certificateViewer.scss";
 
@@ -19,22 +21,20 @@ class CertificateViewerContainer extends Component {
   }
 
   componentDidUpdate() {
+    
     if (inIframe()) {
-      console.log("insdie ");
       this.state.parentFrameConnection.promise.then(parent => {
         if (parent.updateHeight) {
           parent.updateHeight(document.documentElement.scrollHeight);
         }
         if (parent.updateTemplates)
-          parent.updateTemplates(
-            flatten([
-              {
-                id: "certificate",
-                label: "Certificate",
-                template: DefaultCert
-              }
-            ])
-          );
+          parent.updateTemplates(flatten([
+            {
+              id: "certificate",
+              label: "Certificate",
+              template: DefaultCert
+            }
+          ]));
       });
     }
   }
@@ -47,7 +47,7 @@ class CertificateViewerContainer extends Component {
 
     window.opencerts = {
       // getTemplates,
-      renderCertificate
+      renderCertificate,
       // selectTemplateTab
     };
 
@@ -79,7 +79,7 @@ class CertificateViewerContainer extends Component {
   // }
 
   handleCertificateChange(certificate) {
-    this.setState({ document: certificate });
+    this.setState({document: certificate});
   }
 
   render() {
