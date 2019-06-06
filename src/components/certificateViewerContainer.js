@@ -17,7 +17,8 @@ class CertificateViewerContainer extends Component {
     super(props);
 
     this.handleCertificateChange = this.handleCertificateChange.bind(this);
-    this.state = { parentFrameConnection: null, document: null };
+    this.selectTemplateTab = this.selectTemplateTab.bind(this);
+    this.state = { parentFrameConnection: null, document: null, tabIndex: 0 };
   }
 
   componentDidUpdate() {
@@ -33,6 +34,10 @@ class CertificateViewerContainer extends Component {
               id: "certificate",
               label: "Certificate",
               template: DefaultCert
+            }, {
+              id: "transcript",
+              label: "Transcript",
+              template: DefaultCert
             }
           ]));
       });
@@ -43,19 +48,20 @@ class CertificateViewerContainer extends Component {
     // const { selectTemplateTab } = this.props;
     // const getTemplates = () => flatten(this.props.templates);
     const renderCertificate = this.handleCertificateChange;
+    const selectTemplateTab = this.selectTemplateTab;
     const frameHeight = document.documentElement.scrollHeight;
 
     window.opencerts = {
       // getTemplates,
       renderCertificate,
-      // selectTemplateTab
+      selectTemplateTab
     };
 
     if (inIframe()) {
       const parentFrameConnection = connectToParent({
         methods: {
           renderCertificate,
-          // selectTemplateTab,
+          selectTemplateTab,
           // getTemplates,
           frameHeight
         }
@@ -77,6 +83,11 @@ class CertificateViewerContainer extends Component {
   //   trace(`Certificate verification: ${verified}`);
   //   this.props.updateCertificate(fieldContents);
   // }
+
+  selectTemplateTab(idx) {
+    console.log(idx);
+    this.setState({tabIndex: idx})
+  }
 
   handleCertificateChange(certificate) {
     this.setState({document: certificate});
