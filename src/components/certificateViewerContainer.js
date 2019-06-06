@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 
-import {
-  certificateData
-} from "@tradetrust/tradetrust-certificate";
 import connectToParent from "penpal/lib/connectToParent";
-// import styles from "../certificateViewer.scss";
-
 import CertificateViewer from "./certificateViewer";
-import DefaultCert from "./certificateTemplates/default";
+import Templates from "./certificateTemplates/default";
 
 const inIframe = () => window.location !== window.parent.location;
 const flatten = o => JSON.parse(JSON.stringify(o));
@@ -29,30 +24,17 @@ class CertificateViewerContainer extends Component {
           parent.updateHeight(document.documentElement.scrollHeight);
         }
         if (parent.updateTemplates)
-          parent.updateTemplates(flatten([
-            {
-              id: "certificate",
-              label: "Certificate",
-              template: DefaultCert
-            }, {
-              id: "transcript",
-              label: "Transcript",
-              template: DefaultCert
-            }
-          ]));
+          parent.updateTemplates(flatten(Templates));
       });
     }
   }
 
   componentDidMount() {
-    // const { selectTemplateTab } = this.props;
-    // const getTemplates = () => flatten(this.props.templates);
     const renderCertificate = this.handleCertificateChange;
     const selectTemplateTab = this.selectTemplateTab;
     const frameHeight = document.documentElement.scrollHeight;
 
     window.opencerts = {
-      // getTemplates,
       renderCertificate,
       selectTemplateTab
     };
@@ -62,27 +44,12 @@ class CertificateViewerContainer extends Component {
         methods: {
           renderCertificate,
           selectTemplateTab,
-          // getTemplates,
           frameHeight
         }
       });
       this.setState({ parentFrameConnection });
     }
   }
-
-  // handleTextFieldChange(e) {
-  //   const fieldContents = JSON.parse(e.target.value);
-  //   trace(fieldContents);
-  //   const validated = validateSchema(fieldContents);
-  //   if (!validated) {
-  //     throw new Error(
-  //       "Certificate string does not conform to OpenCerts schema"
-  //     );
-  //   }
-  //   const verified = verifySignature(fieldContents);
-  //   trace(`Certificate verification: ${verified}`);
-  //   this.props.updateCertificate(fieldContents);
-  // }
 
   selectTemplateTab(idx) {
     console.log(idx);
@@ -99,8 +66,8 @@ class CertificateViewerContainer extends Component {
     }
     return (
       <CertificateViewer
-        // id={styles["frameless-container"]}
         document={this.state.document}
+        tabIndex={this.state.tabIndex}
       />
     );
   }
