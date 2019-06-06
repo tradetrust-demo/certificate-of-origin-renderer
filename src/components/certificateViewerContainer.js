@@ -52,7 +52,6 @@ class CertificateViewerContainer extends Component {
   }
 
   selectTemplateTab(idx) {
-    console.log(idx);
     this.setState({tabIndex: idx})
   }
 
