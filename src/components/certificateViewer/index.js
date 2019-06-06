@@ -17,11 +17,10 @@ const CertificateViewer = props => {
   //   trace(`Selected template: ${selectedTemplateName}`);
   //   trace(`Certificate content: %o`, certificate);
 
-  return <Template document={document} certificate={certificate} />;
+  return <Template document={document} />;
 };
 
 CertificateViewer.propTypes = {
-  certificate: PropTypes.object.isRequired,
   document: PropTypes.object.isRequired
 };
 

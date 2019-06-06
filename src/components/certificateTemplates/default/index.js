@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { format } from "date-fns";
 
-const Template = ({ certificate }) => (
+const Template = ({ document }) => (
   <>
     <div className="d-flex flex-row-reverse my-5">
-      Dated: {format(certificate.issuedOn, "DD/MM/YYYY")}
+      Dated: {format(document.issuedOn, "DD/MM/YYYY")}
     </div>
     <div className="d-flex">
       <table className="table table-hover table-bordered">
@@ -19,15 +19,15 @@ const Template = ({ certificate }) => (
         <tbody>
           <tr>
             <td style={{ width: "20%" }}>Name</td>
-            <td>{certificate.issuers[0].name}</td>
+            <td>{document.issuers[0].name}</td>
           </tr>
           <tr>
             <td>Address</td>
-            <td>{certificate.issuers[0].address}</td>
+            <td>{document.issuers[0].address}</td>
           </tr>
           <tr>
             <td>Country</td>
-            <td>{certificate.issuers[0].country}</td>
+            <td>{document.issuers[0].country}</td>
           </tr>
         </tbody>
       </table>
@@ -42,15 +42,15 @@ const Template = ({ certificate }) => (
         <tbody>
           <tr>
             <td style={{ width: "20%" }}>Name</td>
-            <td>{certificate.recipient.name}</td>
+            <td>{document.recipient.name}</td>
           </tr>
           <tr>
             <td>Address</td>
-            <td>{certificate.recipient.address}</td>
+            <td>{document.recipient.address}</td>
           </tr>
           <tr>
             <td>Country</td>
-            <td>{certificate.recipient.country}</td>
+            <td>{document.recipient.country}</td>
           </tr>
         </tbody>
       </table>
@@ -59,6 +59,6 @@ const Template = ({ certificate }) => (
 );
 
 Template.propTypes = {
-  certificate: PropTypes.object.isRequired
+  document: PropTypes.object.isRequired
 };
 export default Template;

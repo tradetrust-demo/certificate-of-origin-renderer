@@ -89,8 +89,8 @@ class CertificateViewerContainer extends Component {
     this.setState({tabIndex: idx})
   }
 
-  handleCertificateChange(certificate) {
-    this.setState({document: certificate});
+  handleCertificateChange(doc) {
+    this.setState({document: doc});
   }
 
   render() {
@@ -101,7 +101,6 @@ class CertificateViewerContainer extends Component {
       <CertificateViewer
         // id={styles["frameless-container"]}
         document={this.state.document}
-        certificate={certificateData(this.state.document)}
       />
     );
   }
