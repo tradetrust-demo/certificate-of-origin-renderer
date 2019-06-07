@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
 import connectToParent from "penpal/lib/connectToParent";
-import CertificateViewer from "./certificateViewer";
-import Templates from "./certificateTemplates/default";
-import "./certificateViewerContainer.css";
+import DocumentViewer from "./documentViewer";
+import Templates from "./documentTemplates/default";
+import "./documentViewerContainer.css";
 const inIframe = () => window.location !== window.parent.location;
 const flatten = o => JSON.parse(JSON.stringify(o));
 
-class CertificateViewerContainer extends Component {
+class DocumentViewerContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -63,7 +63,7 @@ class CertificateViewerContainer extends Component {
     }
     return (
       <div className="container cert-border">
-        <CertificateViewer
+        <DocumentViewer
           document={this.state.document}
           tabIndex={this.state.tabIndex}
         />
@@ -71,4 +71,4 @@ class CertificateViewerContainer extends Component {
     );
   }
 }
-export default CertificateViewerContainer;
+export default DocumentViewerContainer;
