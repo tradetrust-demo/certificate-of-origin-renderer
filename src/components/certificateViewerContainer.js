@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import connectToParent from "penpal/lib/connectToParent";
 import CertificateViewer from "./certificateViewer";
 import Templates from "./certificateTemplates/default";
-import "./certificateViewerContainer.css"
+import "./certificateViewerContainer.css";
 const inIframe = () => window.location !== window.parent.location;
 const flatten = o => JSON.parse(JSON.stringify(o));
 
@@ -17,14 +17,12 @@ class CertificateViewerContainer extends Component {
   }
 
   componentDidUpdate() {
-    
     if (inIframe()) {
       this.state.parentFrameConnection.promise.then(parent => {
         if (parent.updateHeight) {
           parent.updateHeight(document.documentElement.scrollHeight);
         }
-        if (parent.updateTemplates)
-          parent.updateTemplates(flatten(Templates));
+        if (parent.updateTemplates) parent.updateTemplates(flatten(Templates));
       });
     }
   }
@@ -52,11 +50,11 @@ class CertificateViewerContainer extends Component {
   }
 
   selectTemplateTab(idx) {
-    this.setState({tabIndex: idx})
+    this.setState({ tabIndex: idx });
   }
 
   handleCertificateChange(doc) {
-    this.setState({document: doc});
+    this.setState({ document: doc });
   }
 
   render() {
@@ -65,10 +63,10 @@ class CertificateViewerContainer extends Component {
     }
     return (
       <div className="container cert-border">
-      <CertificateViewer
-        document={this.state.document}
-        tabIndex={this.state.tabIndex}
-      />
+        <CertificateViewer
+          document={this.state.document}
+          tabIndex={this.state.tabIndex}
+        />
       </div>
     );
   }

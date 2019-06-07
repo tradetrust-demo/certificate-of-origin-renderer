@@ -4,7 +4,9 @@ import { format } from "date-fns";
 
 const Doc1 = ({ document }) => (
   <>
-    <h2 style={{padding: 10, textAlign: "center"}}><u>Certificate of Origin</u></h2>
+    <h2 style={{ padding: 10, textAlign: "center" }}>
+      <u>Certificate of Origin</u>
+    </h2>
     <div className="d-flex flex-row-reverse my-5">
       Dated: {format(document.issuedOn, "DD/MM/YYYY")}
     </div>
@@ -32,7 +34,10 @@ const Doc1 = ({ document }) => (
           </tr>
         </tbody>
       </table>
-      <table className="table table-hover table-bordered" style={{marginLeft: 10}}>
+      <table
+        className="table table-hover table-bordered"
+        style={{ marginLeft: 10 }}
+      >
         <thead>
           <tr>
             <th scope="col" colSpan="2">
@@ -55,30 +60,30 @@ const Doc1 = ({ document }) => (
           </tr>
         </tbody>
       </table>
-      </div>
-      <table className="table table-hover table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" colSpan="2">
-              Shipment Information
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ width: "20%" }}>Name</td>
-            <td>{document.recipient.name}</td>
-          </tr>
-          <tr>
-            <td>Address</td>
-            <td>{document.recipient.address}</td>
-          </tr>
-          <tr>
-            <td>Country</td>
-            <td>{document.recipient.country}</td>
-          </tr>
-        </tbody>
-      </table>
+    </div>
+    <table className="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" colSpan="2">
+            Shipment Information
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style={{ width: "20%" }}>Name</td>
+          <td>{document.recipient.name}</td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>{document.recipient.address}</td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td>{document.recipient.country}</td>
+        </tr>
+      </tbody>
+    </table>
   </>
 );
 
