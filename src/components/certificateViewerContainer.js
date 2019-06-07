@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import connectToParent from "penpal/lib/connectToParent";
 import CertificateViewer from "./certificateViewer";
 import Templates from "./certificateTemplates/default";
-
+import "./certificateViewerContainer.css"
 const inIframe = () => window.location !== window.parent.location;
 const flatten = o => JSON.parse(JSON.stringify(o));
 
@@ -64,10 +64,12 @@ class CertificateViewerContainer extends Component {
       return null;
     }
     return (
+      <div className="container cert-border">
       <CertificateViewer
         document={this.state.document}
         tabIndex={this.state.tabIndex}
       />
+      </div>
     );
   }
 }

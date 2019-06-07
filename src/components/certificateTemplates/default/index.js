@@ -8,7 +8,7 @@ const templates = [
       template: Doc1
     }, {
       id: "transcript",
-      label: "Transcript",
+      label: "Demo Doc 2",
       template: Doc2
     }
 ];

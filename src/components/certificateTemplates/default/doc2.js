@@ -1,121 +1,89 @@
-import React, { Component } from "react";
-// import { get } from "lodash";
+import React from "react";
 import PropTypes from "prop-types";
-// import ObfuscatableValue from "template-commons/Privacy/ObfuscatableValue";
-// import { formatDate } from "./common/functions";
-// import { transcriptBg } from "./common/backgrounds";
-// import css from "./common/demoStyles.scss";
+import { format } from "date-fns";
 
-class Doc2 extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    // const { editable } = this.state;
-    // const { certificate, handleObfuscation } = this.props;
-    // const certificateName = get(certificate, "name");
-    // const certificateId = get(certificate, "id");
-    // const issuanceDate = get(certificate, "issuedOn");
-    // const admissionDate = get(certificate, "admissionDate");
-    // const graduationDate = get(certificate, "graduationDate");
-
-    // const recipientName = get(certificate, "recipient.name");
-    // const recipientNric = get(certificate, "recipient.nric");
-    // const recipientCourse = get(certificate, "recipient.course");
-    // const studentId = get(certificate, "additionalData.studentId");
-
-    // const transcriptData = get(certificate, "transcript", []);
-
-
-    return (
-      <div className="container">
-        <div
-          className="p-2 container"
-          style={{
-            backgroundRepeat: "repeat"
-          }}
-        >
-          <div className={`row ${"title"}`} style={{ paddingLeft: "3%" }}>
-            {/* <b>{certificateName}</b> */}
-          </div>
-
-          <div
-            className={`row ${"transcript"}`}
-            style={{
-              paddingTop: "3%",
-              paddingLeft: "2%"
-            }}
-          >
-            <div className="col">
-              <div className="row">
-                <div className="col">NAME</div>
-                <div className="col">
-                  :&nbsp;&nbsp;
-                  {/* {recipientName} */}
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">COURSE</div>
-                <div className="col">
-                  :&nbsp;&nbsp;
-                  {/* {recipientCourse} */}
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">NRIC/FIN</div>
-                <div className="col">
-                  :&nbsp;&nbsp;
-                  {/* {recipientNric} */}
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">STUDENT ID</div>
-                <div className="col">
-                  :&nbsp;&nbsp;
-                  {/* {studentId} */}
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="row">
-                <div className="col">CERTIFICATE ID</div>
-                <div className="col">
-                  :&nbsp;&nbsp;
-                  {/* {certificateId} */}
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">DATE OF ISSUANCE</div>
-                <div className="col">
-                  :&nbsp;&nbsp;
-                  {/* {formatDate(issuanceDate)} */}
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">DATE OF ADMISSION</div>
-                <div className="col">
-                  :&nbsp;&nbsp;
-                  {/* {formatDate(admissionDate)} */}
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">DATE OF GRADUATION</div>
-                <div className="col">
-                  :&nbsp;&nbsp;
-                  {/* {formatDate(graduationDate)} */}
-                </div>
-              </div>
-            </div>
-          </div>
+const Doc2 = ({ document }) => (
+  <>
+    <h2 style={{padding: 10, textAlign: "center"}}><u>Certificate of Non Manipulation</u></h2>
+    <div className="d-flex flex-row-reverse my-5">
+      Dated: {format(document.issuedOn, "DD/MM/YYYY")}
+    </div>
+    <h2 style={{margin:10}}>This is to certify that the below stated information is correct and accounted.</h2>
+    <div className="d-flex">
+      <table className="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" colSpan="2">
+              Issuer Information
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={{ width: "20%" }}>Name</td>
+            <td>{document.issuers[0].name}</td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>{document.issuers[0].address}</td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>{document.issuers[0].country}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table className="table table-hover table-bordered" style={{marginLeft: 10}}>
+        <thead>
+          <tr>
+            <th scope="col" colSpan="2">
+              Recipient Information
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={{ width: "20%" }}>Name</td>
+            <td>{document.recipient.name}</td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>{document.recipient.address}</td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>{document.recipient.country}</td>
+          </tr>
+        </tbody>
+      </table>
       </div>
-      </div>
-    );
-  }
-}
+      <table className="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" colSpan="2">
+              Shipment Information
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={{ width: "20%" }}>Name</td>
+            <td>{document.recipient.name}</td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>{document.recipient.address}</td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>{document.recipient.country}</td>
+          </tr>
+        </tbody>
+      </table>
+  </>
+);
+
 Doc2.propTypes = {
-  certificate: PropTypes.object.isRequired,
-  handleObfuscation: PropTypes.func
+  document: PropTypes.object.isRequired
 };
-
 export default Doc2;
