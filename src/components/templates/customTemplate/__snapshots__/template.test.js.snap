@@ -7,6 +7,9 @@ exports[`default template matches snapshot 1`] = `
   <h1>
     Rendered with custom template
   </h1>
+  <p>
+    Adding change to custom template
+  </p>
   <pre>
     {
   "foo": "bar"
