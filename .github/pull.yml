@@ -2,5 +2,4 @@ version: "1"
 rules:
   - base: master
     upstream: TradeTrust:master
-    mergeMethod: rebase
     autoMerge: false
