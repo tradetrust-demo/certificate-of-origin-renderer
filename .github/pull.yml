@@ -3,3 +3,4 @@ rules:
   - base: master
     upstream: TradeTrust:master
     mergeMethod: squash
+    autoMerge: false
