@@ -2,5 +2,5 @@ version: "1"
 rules:
   - base: master
     upstream: TradeTrust:master
-    mergeMethod: merge
+    mergeMethod: squash
     autoMerge: false
