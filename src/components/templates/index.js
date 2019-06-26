@@ -5,10 +5,10 @@
 
 // TODO: Use dynamic loading to prevent all templates to be loaded at once.
 import DefaultTemplate from "./default";
-import CustomTemplate from "./customTemplate";
+import CertificateOfOriginTemplate from "./certificateOfOrigin";
 
 export default {
   default: DefaultTemplate,
-  CUSTOM_TEMPLATE: CustomTemplate,
+  CERTIFICATE_OF_ORIGIN: CertificateOfOriginTemplate,
   NULL: []
 };

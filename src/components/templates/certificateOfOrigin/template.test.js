@@ -1,57 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>iFrame Rendering</title>
-  </head>
-  <script src="https://unpkg.com/penpal/dist/penpal.min.js"></script>
+import React from "react";
+import renderer from "react-test-renderer";
+import templates from "./index";
+import Template from "./template";
 
-  <body>
-    <button id="render-certificate" onclick="renderDocument(certificate)">
-      Render Certificate
-    </button>
-
-    <div id="template-selectors"></div>
-
-    <iframe
-      title="Rendered Certificate"
-      id="frameless-iframe"
-      src="http://localhost:3000"
-      style="width: 100%; border: 0px; overflow: hidden;"
-    ></iframe>
-  </body>
-
-  <script type="text/javascript">
-    const iframe = document.getElementById("frameless-iframe");
-    var iframeMethods;
-    selectTemplateTab = function(i) {
-      window.connection.promise.then(frame => frame.selectTemplateTab(i));
-    };
-    updateHeight = function(h) {
-      iframe.height = h;
-    };
-    updateTemplates = function(templates) {
-      if (!templates) return;
-      const templateSelector = document.getElementById("template-selectors");
-      templateSelector.innerHTML = "";
-      templates.forEach((tab, index) => {
-        const btn = document.createElement("button");
-        btn.innerHTML = tab.label;
-        btn.id = `selector-${tab.id}`;
-        btn.onclick = () => selectTemplateTab(index);
-        templateSelector.appendChild(btn);
-      });
-    };
-    window.connection = window.Penpal.connectToChild({
-      iframe,
-      methods: {
-        updateHeight,
-        updateTemplates
-      }
+describe("index", () => {
+  it("exports a templates array", () => {
+    expect(Array.isArray(templates)).toBe(true);
+    templates.forEach(template => {
+      expect(template.id).toBeTruthy();
+      expect(template.label).toBeTruthy();
+      expect(typeof template.template).toBe("function");
     });
-    renderDocument = function(cert) {
-      window.connection.promise.then(frame => frame.renderDocument(cert));
-    };
-    const certificate = {
+  });
+});
+
+describe("default template", () => {
+  it("matches snapshot", () => {
+    const document = {
       id: "A182470ZC43306037",
       $template: {
         name: "CERTIFICATE_OF_ORIGIN",
@@ -124,6 +89,8 @@
         }
       ]
     };
-    // setInterval(() => renderDocument(certificate), 300);
-  </script>
-</html>
+    const component = renderer.create(<Template document={document} />);
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
