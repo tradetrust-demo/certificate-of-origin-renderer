@@ -3,15 +3,13 @@ node_js:
   - lts/*
 cache: npm install
 addons:
-  sonarcloud:
-    organisation: tradetrust
+  sonarqube: true
 jobs:
   include:
     - stage: test
       script:
         - npm run lint
         - npm run test-coverage
-        - sonar-scanner
+        - ./scripts/sonar-runner.sh
 stages:
   - test
-  - integration
