@@ -8,7 +8,6 @@ jest.mock("./utils", () => ({
 }));
 
 it("renders the right template depending on the tabIndex", () => {
-  
   /* eslint-disable */
   documentTemplates.mockReturnValue([
     { template: ({ document }) => <div id="content">{document.foo}</div> },
