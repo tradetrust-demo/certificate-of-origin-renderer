@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/TradeTrust/document-renderer.svg?branch=master)](https://travis-ci.org/TradeTrust/document-renderer)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TradeTrust_document-renderer&metric=alert_status)](https://sonarcloud.io/dashboard?id=TradeTrust_document-renderer)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=TradeTrust_document-renderer&metric=coverage)](https://sonarcloud.io/dashboard?id=TradeTrust_document-renderer)
 
 # Decentralised Document Renderer
 
