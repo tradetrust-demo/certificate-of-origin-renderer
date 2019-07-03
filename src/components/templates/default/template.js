@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "bootstrap/dist/css/bootstrap.css";
+import NestedComponent from "./NestedComponent";
 
 const Template = ({ document }) => (
   <div className="container">
-    <pre>{JSON.stringify(document, null, 2)}</pre>
+    <NestedComponent>{document}</NestedComponent>
   </div>
 );
 

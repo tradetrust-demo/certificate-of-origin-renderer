@@ -4,10 +4,26 @@ exports[`default template matches snapshot 1`] = `
 <div
   className="container"
 >
-  <pre>
-    {
-  "foo": "bar"
-}
-  </pre>
+  <div
+    className="borders"
+  >
+    <div
+      className="borders"
+    >
+      <div
+        className="p-4 background"
+        data-component-id="toggle-display"
+        onClick={[Function]}
+      >
+        foo
+      </div>
+      <div
+        className="p-4 text-truncate "
+        data-component-id="displayed-value"
+      >
+        bar
+      </div>
+    </div>
+  </div>
 </div>
 `;
