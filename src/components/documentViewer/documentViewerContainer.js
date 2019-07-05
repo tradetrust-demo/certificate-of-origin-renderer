@@ -20,6 +20,10 @@ class DocumentViewerContainer extends Component {
     };
   }
 
+  updateHeightWhenResize() {
+    window.addEventListener("resize", this.updateParentHeight);
+  }
+
   // Use postMessage to update iframe's parent to scale the height
   async updateParentHeight() {
     if (inIframe()) {
@@ -71,7 +75,7 @@ class DocumentViewerContainer extends Component {
       }).promise;
       this.setState({ parentFrameConnection });
     }
-    window.addEventListener("resize", this.updateParentHeight());
+    this.updateHeightWhenResize();
   }
 
   render() {
