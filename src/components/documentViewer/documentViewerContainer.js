@@ -72,6 +72,10 @@ class DocumentViewerContainer extends Component {
       }).promise;
       this.setState({ parentFrameConnection });
     }
+    window.addEventListener(
+      "resize",
+      this.updateParentHeight(document.documentElement.offsetHeight)
+    );
   }
 
   render() {
