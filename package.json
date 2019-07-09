@@ -19,7 +19,8 @@
     "test-coverage": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js --max-warnings 0",
-    "lint:fix": "eslint . --ext .js --fix"
+    "lint:fix": "eslint . --ext .js --fix",
+    "deploy-gh": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +49,7 @@
     "eslint-plugin-jest": "^22.7.2",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6",
