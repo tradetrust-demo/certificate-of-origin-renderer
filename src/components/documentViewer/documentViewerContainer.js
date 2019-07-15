@@ -13,6 +13,7 @@ class DocumentViewerContainer extends Component {
     this.selectTemplateTab = this.selectTemplateTab.bind(this);
     this.updateParentHeight = this.updateParentHeight.bind(this);
     this.updateParentTemplateTabs = this.updateParentTemplateTabs.bind(this);
+    this.handleObfuscation = this.handleObfuscation.bind(this);
     this.state = {
       parentFrameConnection: null,
       document: null,
@@ -56,6 +57,16 @@ class DocumentViewerContainer extends Component {
     this.updateParentTemplateTabs();
   }
 
+  async handleObfuscation(field) {
+    if (inIframe()) {
+      const { parentFrameConnection } = this.state;
+      const parent = await parentFrameConnection;
+      if (parent.handleObfuscation) {
+        parent.handleObfuscation(field);
+      }
+    }
+  }
+
   componentDidUpdate() {
     this.updateParentHeight();
   }
@@ -92,6 +103,7 @@ class DocumentViewerContainer extends Component {
         document={this.state.document}
         tabIndex={this.state.tabIndex}
         handleHeightUpdate={this.updateParentHeight}
+        handleObfuscation={this.handleObfuscation}
       />
     );
   }
