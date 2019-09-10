@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { get } from "lodash";
 import "bootstrap/dist/css/bootstrap.css";
 import "./style.css";
+const QRCode = require("qrcode.react");
 
 const borderStyle = {
   borderStyle: "solid",
@@ -10,11 +11,16 @@ const borderStyle = {
   borderColor: "#FFF"
 };
 
+const qrCodeStyle = {
+  textAlign: "right",
+  marginTop: 20
+};
+
 const ExporterAndProducer = document => (
   <div className="row">
     <div className="col-12 col-md-6">
       <div className="p-2" style={borderStyle}>
-        <div>1. Exporter's name, address and country:</div>
+        <div>1. Exporter{"'"}s name, address and country:</div>
         <pre className="p-2">
           <div>{get(document, "exporter.name")}</div>
           <div>{get(document, "exporter.address.street")}</div>
@@ -25,7 +31,7 @@ const ExporterAndProducer = document => (
         </pre>
       </div>
       <div className="p-2" style={borderStyle}>
-        <div>2. Producer's name and address (if known):</div>
+        <div>2. Producer{"'"}s name and address (if known):</div>
         <pre className="p-2">
           <div>{get(document, "producer.name")}</div>
           <div>{get(document, "producer.address.street")}</div>
@@ -58,7 +64,7 @@ const ExporterAndProducer = document => (
 const Importer = document => (
   <div className="row">
     <div className="col-12 col-md-6 p-2" style={borderStyle}>
-      <div>3. Importer's name, address and country (if known):</div>
+      <div>3. Importer{"'"}s name, address and country (if known):</div>
       <pre className="p-2">
         <div>{get(document, "importer.name")}</div>
         <div>{get(document, "importer.address.street")}</div>
@@ -95,7 +101,9 @@ const TransportAndPort = document => (
         </div>
       </div>
     </div>
-    <div className="col-12 col-md-6 p-2" style={borderStyle}>Remarks</div>
+    <div className="col-12 col-md-6 p-2" style={borderStyle}>
+      Remarks
+    </div>
   </div>
 );
 
@@ -182,7 +190,7 @@ const Declarations = document => (
         </div>
       </div>
     </div>
-    <div className="col-12 col-md-6 p-2"  style={borderStyle}>
+    <div className="col-12 col-md-6 p-2" style={borderStyle}>
       <div className="p-2">14. Certification</div>
       <div className="p-2">
         On the basis of the control carried out, it is hereby certified that the
@@ -230,6 +238,11 @@ const Template = ({ document }) => (
       {TransportAndPort(document)}
       {ItemsTransported(document)}
       {Declarations(document)}
+    </div>
+    <div style={qrCodeStyle}>
+      {get(document, "documentUrl") && (
+        <QRCode value={`${get(document, "documentUrl")}`} />
+      )}
     </div>
   </div>
 );
