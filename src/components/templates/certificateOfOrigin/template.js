@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { get } from "lodash";
 import "bootstrap/dist/css/bootstrap.css";
 import "./style.css";
-import QrCode from "../qrCode";
 
 const borderStyle = {
   borderStyle: "solid",
@@ -234,7 +233,6 @@ const Template = ({ document }) => (
       {ItemsTransported(document)}
       {Declarations(document)}
     </div>
-    <QrCode document={document} />
   </div>
 );
 
