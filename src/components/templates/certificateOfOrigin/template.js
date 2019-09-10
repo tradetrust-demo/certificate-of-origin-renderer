@@ -3,17 +3,12 @@ import PropTypes from "prop-types";
 import { get } from "lodash";
 import "bootstrap/dist/css/bootstrap.css";
 import "./style.css";
-const QRCode = require("qrcode.react");
+import QrCode from "../qrCode";
 
 const borderStyle = {
   borderStyle: "solid",
   borderWidth: 0.5,
   borderColor: "#FFF"
-};
-
-const qrCodeStyle = {
-  textAlign: "right",
-  marginTop: 20
 };
 
 const ExporterAndProducer = document => (
@@ -239,11 +234,7 @@ const Template = ({ document }) => (
       {ItemsTransported(document)}
       {Declarations(document)}
     </div>
-    <div style={qrCodeStyle}>
-      {get(document, "documentUrl") && (
-        <QRCode value={`${get(document, "documentUrl")}`} />
-      )}
-    </div>
+    <QrCode document={document} />
   </div>
 );
 
