@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 const QRCode = require("qrcode.react");
 
 const qrCodeStyle = {
-  textAlign: "right",
+  textAlign: "center",
   marginTop: 20
 };
 
 const QrCode = ({ document }) => (
-  <div style={qrCodeStyle}>
+  <div className="container p-2" style={qrCodeStyle}>
     {get(document, "documentUrl") ? (
       <QRCode value={`${get(document, "documentUrl")}`} />
     ) : null}
