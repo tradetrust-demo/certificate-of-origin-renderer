@@ -1,0 +1,526 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default template matches snapshot 1`] = `
+<div
+  className="container p-2"
+  style={
+    Object {
+      "borderStyle": "solid",
+      "borderWidth": 1,
+    }
+  }
+>
+  <div
+    className="text-center"
+  >
+    CERTIFICATE OF ORIGIN
+  </div>
+  <div
+    className="p-2"
+    style={
+      Object {
+        "backgroundColor": "#e9f0c4",
+        "borderColor": "#FFF",
+        "borderStyle": "solid",
+        "borderWidth": 0.5,
+      }
+    }
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-12 col-md-6"
+      >
+        <div
+          className="p-2"
+          style={
+            Object {
+              "borderColor": "#FFF",
+              "borderStyle": "solid",
+              "borderWidth": 0.5,
+            }
+          }
+        >
+          <div>
+            1. Exporter
+            '
+            s name, address and country:
+          </div>
+          <pre
+            className="p-2"
+          >
+            <div>
+              FINE RED'S
+            </div>
+            <div>
+              90 COLLINS ST
+            </div>
+            <div>
+              MELBOURNE, VICTORIA, AUSTRALIA
+            </div>
+          </pre>
+        </div>
+        <div
+          className="p-2"
+          style={
+            Object {
+              "borderColor": "#FFF",
+              "borderStyle": "solid",
+              "borderWidth": 0.5,
+            }
+          }
+        >
+          <div>
+            2. Producer
+            '
+            s name and address (if known):
+          </div>
+          <pre
+            className="p-2"
+          >
+            <div>
+              PERFECT PINOT LTD
+            </div>
+            <div>
+              309 KING ST
+            </div>
+            <div>
+              MELBOURNE, VICTORIA, AUSTRALIA
+            </div>
+          </pre>
+        </div>
+      </div>
+      <div
+        className="col-12 col-md-6"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        <div
+          className="d-flex flex-column justify-content-between h-100"
+        >
+          <div
+            className="p-2"
+          >
+            Certificate No.: 
+            A182470ZC43306037
+          </div>
+          <div
+            className="align-self-center"
+          >
+            <div
+              className="text-center p-2"
+            >
+              <strong>
+                CERTIFICATE OF ORIGIN
+              </strong>
+            </div>
+            <div
+              className="text-center p-2"
+            >
+              <strong>
+                Form for China-Australia Free Trade Agreement
+              </strong>
+            </div>
+          </div>
+          <div
+            className="p-2"
+          >
+            Issued in: 
+            AUSTRALIA
+             
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-12 col-md-6 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        <div>
+          3. Importer
+          '
+          s name, address and country (if known):
+        </div>
+        <pre
+          className="p-2"
+        >
+          <div>
+            HUNAN WINES
+          </div>
+          <div>
+            EAST JIEFANG ROAD
+          </div>
+          <div>
+            CHANGSHA, HUNAN, CHINA
+          </div>
+        </pre>
+      </div>
+      <div
+        className="col-12 col-md-6 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        For official use only
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-12 col-md-6 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        <div>
+          4. Means of transport and route (if known):
+        </div>
+        <div
+          className="p-2"
+        >
+          <div>
+            Departure date: 
+            <pre>
+              2018-01-11
+            </pre>
+          </div>
+          <div>
+            Vessel/Flight/Train/Vehicle No.: 
+            <pre>
+              CZ3073/11-JAN
+            </pre>
+          </div>
+          <div>
+            Port of loading: 
+            <pre>
+              MELBOURNE, AUSTRALIA
+            </pre>
+          </div>
+          <div>
+            Port of discharge: 
+            <pre>
+              HUNAN, CHINA
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-12 col-md-6 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        Remarks
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-1 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        6. Item number (max.20)
+      </div>
+      <div
+        className="col-2 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        7. Marks and numbers on packages (optional)
+      </div>
+      <div
+        className="col-3 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        8. Number and kind of packages; description of goods
+      </div>
+      <div
+        className="col-1 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        9. HS code (6-digit code)
+      </div>
+      <div
+        className="col-1 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        10. Origin criterion
+      </div>
+      <div
+        className="col-2 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        11. Gross or net weight or other quantity (e.g. Quantity Unit, litres, m
+        <sup>
+          3
+        </sup>
+        .)
+      </div>
+      <div
+        className="col-2 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        12. Invoice number and date
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-1 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        1
+      </div>
+      <div
+        className="col-2 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        
+      </div>
+      <div
+        className="col-3 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        16667 CARTONS OF RED WINE
+      </div>
+      <div
+        className="col-1 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        
+      </div>
+      <div
+        className="col-1 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        WP
+      </div>
+      <div
+        className="col-2 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        5000 LITRES
+      </div>
+      <div
+        className="col-2 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        24082011 2018-01-07
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-12 col-md-6 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        <div
+          className="d-flex flex-column justify-content-between h-100"
+        >
+          <div>
+            13. Decaration by the exporter or producer
+          </div>
+          <div
+            className="p-2"
+          >
+            The undersigned herby declares that the above-stated information is correct and that the goods exported to
+             
+            CHINA
+             comply with the origin requirements specified in the China-Australia Free Trade Agreement.
+          </div>
+          <div
+            className="p-2"
+          >
+            <div>
+              MELBOURNE AUSTRALIA 2018-01-09
+            </div>
+            <div>
+              Place, date and signature of authorised person
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-12 col-md-6 p-2"
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+          }
+        }
+      >
+        <div
+          className="p-2"
+        >
+          14. Certification
+        </div>
+        <div
+          className="p-2"
+        >
+          On the basis of the control carried out, it is hereby certified that the information herein is correct and that the described goods comply with the origin requirements of the China-Australia Free Trade Agreement.
+        </div>
+        <div
+          className="p-2"
+        >
+          <div>
+            MELBOURNE AUSTRALIA 2018-01-09
+          </div>
+          <div>
+            Place, date and signature of authorised person
+          </div>
+        </div>
+        <div
+          className="p-2 row"
+        >
+          <div
+            className="col-6"
+          >
+            Tel: 
+            +61-3-93911627
+          </div>
+          <div
+            className="col-6"
+          >
+            Fax: 
+            +61-3-93911687
+          </div>
+        </div>
+        <div
+          className="p-2"
+        >
+          <div>
+            Address:
+          </div>
+          <div>
+            135 DONNYBROOK RD
+          </div>
+          <div>
+            MELBOURNE VICTORIA AUSTRALIA
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
