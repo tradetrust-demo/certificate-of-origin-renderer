@@ -1,5 +1,10 @@
 import React from "react";
-import { Attachment, PdfRenderer, UnsupportedRenderer } from "@govtechsg/decentralized-renderer-react-components";
+import {
+  Attachment,
+  PdfRenderer,
+  UnsupportedRenderer,
+  Document
+} from "@govtechsg/decentralized-renderer-react-components";
 import { get } from "lodash";
 import QRCode from "qrcode.react";
 
