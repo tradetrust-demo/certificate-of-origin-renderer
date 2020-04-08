@@ -138,13 +138,7 @@
       }
     },
     "rules": {
-      "@typescript-eslint/explicit-function-return-type": [
-        "warn",
-        {
-          "allowExpressions": true,
-          "allowTypedFunctionExpressions": true
-        }
-      ],
+      "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "react/prop-types": "off",
       "react/self-closing-comp": "error",
