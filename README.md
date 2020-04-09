@@ -1,6 +1,6 @@
 # decentralized-renderer-react-template
 
-[![CircleCI](https://circleci.com/gh/Open-Attestation/decentralized-renderer-react-template.svg?style=svg)](https://circleci.com/gh/Open-Attestation/decentralized-renderer-react-template)
+[![CircleCI](https://circleci.com/gh/tradetrust-demo/certificate-of-origin-renderer.svg?style=svg)](https://circleci.com/gh/tradetrust-demo/certificate-of-origin-renderer)
 
 React boilerplate to write decentralize renderer.
 
