@@ -1,6 +1,7 @@
 import React from "react";
 import { get } from "lodash";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
+import { DocumentQrCode } from "../../core/DocumentQrCode";
 
 const borderStyle = {
   borderStyle: "solid",
@@ -207,15 +208,21 @@ const Declarations = (document: any) => (
   </div>
 );
 
-export const Template: React.FunctionComponent<TemplateProps<any>> = ({ document }) => (
-  <div className="container p-2" style={{ borderStyle: "solid", borderWidth: 1 }}>
-    <div className="text-center">CERTIFICATE OF ORIGIN</div>
-    <div className="p-2" style={{ backgroundColor: "#e9f0c4", ...borderStyle }}>
-      {ExporterAndProducer(document)}
-      {Importer(document)}
-      {TransportAndPort(document)}
-      {ItemsTransported(document)}
-      {Declarations(document)}
+export const Template: React.FunctionComponent<TemplateProps<any>> = ({ document }) => {
+  const qrCodeUrl = document?.links?.self.href;
+  return (
+    <div>
+      <div className="container p-2" style={{ borderStyle: "solid", borderWidth: 1 }}>
+        <div className="text-center">CERTIFICATE OF ORIGIN</div>
+        <div className="p-2" style={{ backgroundColor: "#e9f0c4", ...borderStyle }}>
+          {ExporterAndProducer(document)}
+          {Importer(document)}
+          {TransportAndPort(document)}
+          {ItemsTransported(document)}
+          {Declarations(document)}
+        </div>
+      </div>
+      {qrCodeUrl && <DocumentQrCode url={qrCodeUrl} />}
     </div>
-  </div>
-);
+  );
+};
